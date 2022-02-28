@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid: column</title>
+</head>
+<body>
+    <div class="grid">
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+        <div class="box">😎</div>
+    </div>
+
+    <style>
+        .grid {
+            width: 100%;
+            background-color: rgb(197, 197, 197);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 7px;
+        }
+
+        .box {
+            background-color: rgb(10, 235, 160);
+            height: 52px;
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</body>
+</html>

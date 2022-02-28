@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="drop" style="--order: 1">😴</span>
+        <span class="drop" style="--order: 2">😜</span>
+        <span class="drop" style="--order: 3">🤩</span>
+    </div>
+
+    <style>
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            width: 600px;
+            margin: auto;
+            background-color: rgb(226, 218, 218);
+        }
+
+        .drop {
+            font-size: 30px;
+            animation: drop 1s ease-in-out;
+            animation-delay: calc(var(--order) * 200ms);
+        }
+
+        @keyframes drop {
+            from { 
+                transform: translateY(-300px)
+            }
+            to { 
+                transform: translateY(0px)
+            }
+        }
+    </style>
+</body>
+</html>

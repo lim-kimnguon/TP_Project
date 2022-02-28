@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex: column</title>
+</head>
+<body>
+    <div class="row-wrapper">
+        <div class="column-wrapper">
+            <div class="box">😒</div>
+            <div class="box">🤪</div>
+            <div class="box">😷</div>
+        </div>
+        <div class="column-wrapper">
+            <div class="box">😒</div>
+            <div class="box">🤪</div>
+            <div class="box">😷</div>
+        </div>
+        <div class="column-wrapper">
+            <div class="box">😒</div>
+            <div class="box">🤪</div>
+            <div class="box">😷</div>
+        </div>
+        <div class="column-wrapper">
+            <div class="box">😒</div>
+            <div class="box">🤪</div>
+        </div>
+    </div>
+
+    <style>
+        .row-wrapper {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px; 
+            background-color: rgb(189, 186, 186);
+        }
+
+        .column-wrapper {
+            width: 100%;
+        }
+
+        .box {
+            background-color: rgb(70, 70, 245);
+            padding: auto;
+            margin: 4px;
+            height: 50px;
+            border-radius: 5px;
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</body>
+</html>
