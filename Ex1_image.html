@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Ex1</title>
+  <style>
+   
+   .contain{
+      background-color:grey;
+      width: 500px;
+    }
+
+    #image_display{
+      background-color: black;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+    <center>
+      <canvas width="500" height="500" id="image_display"></canvas><br>
+      <div class="contain">
+        <span>😘Canvas: Insert me an image please😘</span><br>
+        <input type="file" id="img" name="img" accept="image/*">
+      </div>
+    </center>
+
+    <script>
+        const img_dis = document.getElementById('image_display');
+        const ctx = img_dis.getContext('2d');
+        const imgWidth = img_dis.width;
+        const imgHeight = img_dis.height;
+
+        const image = new Image(imgWidth, imgHeight); 
+        image.onload = drawImageActualSize;
+
+        $("#img").change(function () {
+          var reader  = new FileReader();
+          var file = document.querySelector('#img').files[0];
+          reader.onloadend = function () {
+            image.src = reader.result;
+          }
+
+          if (file) {
+            reader.readAsDataURL(file);
+          } else {
+            image.src = "";
+          }
+        });
+
+        function drawImageActualSize() {
+          ctx.drawImage(this, 0, 0);
+          ctx.drawImage(this, 0, 0, this.width, this.height);
+        }
+    </script>
+</body>
+</html>
